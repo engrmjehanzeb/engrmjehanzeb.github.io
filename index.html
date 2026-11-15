@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -83,8 +82,58 @@ section:nth-of-type(even) { background: var(--light); }
   background: white; padding: 25px;
   border: 1px solid #e5eaf1; border-radius: 9px;
 }
+.card.full-width {
+  grid-column: 1 / -1;
+}
 .card h3 { color: var(--navy); margin-bottom: 9px; font-size: 19px; }
 .card p { color: var(--muted); font-size: 14px; }
+
+/* Image & Gallery Styling */
+.card-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  border: 1px solid #e5eaf1;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.card-img:hover { transform: scale(1.01); }
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.gallery-grid.three-col {
+  grid-template-columns: repeat(3, 1fr);
+}
+.gallery-item {
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #e5eaf1;
+  background: #f8fafc;
+}
+.gallery-item img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.gallery-item img:hover { transform: scale(1.04); }
+.gallery-caption {
+  font-size: 11px;
+  color: var(--muted);
+  padding: 5px 6px;
+  text-align: center;
+  background: #f8fafc;
+  border-top: 1px solid #eef2f6;
+}
+
 .tag {
   display: inline-block; margin: 12px 5px 0 0;
   padding: 5px 10px; border-radius: 4px;
@@ -122,6 +171,20 @@ footer {
   text-align: center; padding: 25px 0; font-size: 13px;
 }
 footer a { color: white; }
+
+/* Click-to-zoom Lightbox */
+.lightbox {
+  display: none; position: fixed; inset: 0; z-index: 100;
+  background: rgba(16, 35, 59, 0.92);
+  align-items: center; justify-content: center;
+  padding: 20px; cursor: zoom-out;
+}
+.lightbox.open { display: flex; }
+.lightbox img {
+  max-width: 92%; max-height: 88vh;
+  border-radius: 8px; box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+}
+
 @media(max-width:700px) {
   .nav-inner { padding: 13px 0; align-items: flex-start; flex-direction: column; }
   .nav-links { gap: 12px; }
@@ -129,6 +192,9 @@ footer a { color: white; }
   section { padding: 55px 0; }
   .about-grid,.project-grid,.experience-grid,.skills-grid {
     grid-template-columns: 1fr;
+  }
+  .gallery-grid, .gallery-grid.three-col {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 </style>
@@ -145,6 +211,7 @@ footer a { color: white; }
       <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
+      <a href="#certifications">Certifications</a>
       <a href="#contact">Contact</a>
     </div>
   </div>
@@ -221,215 +288,28 @@ footer a { color: white; }
   <div class="container">
     <div class="section-heading">
       <h2>Engineering Projects</h2>
-      <p>Selected academic and practical engineering work.</p>
+      <p>Selected academic and practical engineering work. Click any picture to enlarge.</p>
     </div>
 
     <div class="project-grid">
-      <div class="card">
+      <!-- PROJECT 01 -->
+      <div class="card full-width">
         <div class="project-number">PROJECT 01 · FINAL YEAR PROJECT</div>
         <h3>Semi-Autonomous In-Pipe Inspection and Monitoring Robot</h3>
         <div class="meta">SNGPL-Sponsored Project | 2024–2025</div>
-        <p>
-          Developed as a final-year engineering project to explore
-          robotic inspection of gas pipelines. The project focused on
-          a mobile inspection platform capable of navigating inside
-          pipelines and collecting condition-monitoring information.
-        </p>
-        <ul class="details">
-          <li>Worked on mechanical concept and chassis development.</li>
-          <li>Explored spring-loaded telescopic and pantographic leg mechanisms.</li>
-          <li>Designed for pipeline diameters of approximately 14–16 inches.</li>
-          <li>Included ultrasonic wall-thickness inspection and monitoring concepts.</li>
-          <li>Explored FPV, LoRa and GPS-based monitoring components.</li>
-        </ul>
-        <span class="tag">Fusion 360</span>
-        <span class="tag">Mechanical Design</span>
-        <span class="tag">Robotics</span>
-        <span class="tag">Inspection</span>
-        <p style="margin-top:15px"><strong>Achievement:</strong> 1st position among 37 projects.</p>
-      </div>
 
-      <div class="card">
-        <div class="project-number">PROJECT 02 · INDUSTRIAL CASE STUDY</div>
-        <h3>Pump Performance and Low-Flow Investigation</h3>
-        <div class="meta">Engro Fertilizers | 2025</div>
-        <p>
-          Investigated a low-flow problem involving a safety-shower
-          and potable-water pump during industrial training at
-          Engro Fertilizers, Daharki.
-        </p>
-        <ul class="details">
-          <li>Studied a KSB API OH1 centrifugal pump.</li>
-          <li>Reviewed the pump's operating conditions and specifications.</li>
-          <li>Observed damaged impeller and worn casing conditions.</li>
-          <li>Explored possible causes of reduced flow and equipment deterioration.</li>
-        </ul>
-        <span class="tag">Centrifugal Pumps</span>
-        <span class="tag">Troubleshooting</span>
-        <span class="tag">Maintenance</span>
-      </div>
-
-      <div class="card">
-        <div class="project-number">PROJECT 03 · MECHANICAL ENGINEERING</div>
-        <h3>Reciprocating Gas Compressor Exposure</h3>
-        <div class="meta">Mari Energies | 2024</div>
-        <p>
-          Gained practical exposure to a high-reliability gas compression
-          package during industrial internship at the Daharki compressor
-          station.
-        </p>
-        <ul class="details">
-          <li>Studied an Ariel KBZ-4 four-stage reciprocating compressor.</li>
-          <li>Observed compressor package components and operating principles.</li>
-          <li>Learned about compressor maintenance and operational practices.</li>
-          <li>Received exposure to PTW, LOTO and gas-safety procedures.</li>
-        </ul>
-        <span class="tag">Compressors</span>
-        <span class="tag">Rotating Equipment</span>
-        <span class="tag">Industrial Safety</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="experience">
-  <div class="container">
-    <div class="section-heading">
-      <h2>Industrial Experience</h2>
-      <p>Learning through engineering environments, equipment and practical exposure.</p>
-    </div>
-    <div class="experience-grid">
-      <div class="card">
-        <h3>PEC Graduate Engineer Training</h3>
-        <div class="meta">Planning & Development Department, Government of KP | 2026–Present</div>
-        <p>
-          Graduate Engineer Training exposure through engineering
-          organizations and public-sector infrastructure facilities.
-        </p>
-        <ul class="details">
-          <li>Ultimate Engineering Consultant, Peshawar.</li>
-          <li>Water and Sanitation Services Peshawar (WSSP).</li>
-          <li>Malakand-III Hydropower Station.</li>
-          <li>Exposure to workshop maintenance, welding, repair and hydropower equipment.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Mechanical Maintenance Intern</h3>
-        <div class="meta">Engro Fertilizers, Daharki | July–August 2025</div>
-        <p>
-          Industrial training in the Urea-II plant with exposure to
-          mechanical maintenance activities, rotating equipment and
-          equipment troubleshooting.
-        </p>
-      </div>
-      <div class="card">
-        <h3>Mechanical Maintenance Intern</h3>
-        <div class="meta">Mari Energies, Daharki | July–August 2024</div>
-        <p>
-          Industrial training at the compressor station, with exposure
-          to reciprocating gas compression equipment, maintenance
-          practices and operational safety.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="skills">
-  <div class="container">
-    <div class="section-heading">
-      <h2>Technical Skills</h2>
-      <p>Tools, technologies and engineering areas developed through education and experience.</p>
-    </div>
-    <div class="skills-grid">
-      <div class="card skill">
-        <h3>CAD & Design</h3>
-        <p>Autodesk Fusion 360, AutoCAD, CAD modelling and mechanical design fundamentals.</p>
-      </div>
-      <div class="card skill">
-        <h3>Mechanical Engineering</h3>
-        <p>Machine design, materials, manufacturing, mechanical systems and engineering fundamentals.</p>
-      </div>
-      <div class="card skill">
-        <h3>Maintenance</h3>
-        <p>Rotating equipment, pumps, compressors, bearings and industrial maintenance exposure.</p>
-      </div>
-      <div class="card skill">
-        <h3>Inspection & Quality</h3>
-        <p>Non-destructive testing fundamentals, ultrasonic testing and quality management systems.</p>
-      </div>
-      <div class="card skill">
-        <h3>Robotics & Automation</h3>
-        <p>Robotic mechanisms, inspection systems, automation concepts and monitoring technologies.</p>
-      </div>
-      <div class="card skill">
-        <h3>Engineering Software</h3>
-        <p>Autodesk tools, Fusion 360, AutoCAD and basic engineering simulation exposure.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="certifications">
-  <div class="container">
-    <div class="section-heading">
-      <h2>Certifications & Professional Development</h2>
-      <p>Additional professional learning and technical qualifications.</p>
-    </div>
-    <div class="card">
-      <ul class="details">
-        <li>ISO 9001:2015 Lead Auditor – CQI/IRCA.</li>
-        <li>ASNT NDT Level II – UT, RT and VT (include only the methods formally awarded on your certificate).</li>
-        <li>Certified SolidWorks Associate (CSWA).</li>
-        <li>Autodesk CAD/CAM/CAE certification.</li>
-        <li>AutoCAD certification.</li>
-        <li>IOSH certification.</li>
-        <li>OSHA 30-Hour training.</li>
-        <li>Risk Assessment and Fire Safety training.</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <div class="highlight">
-      <h3>Looking Ahead</h3>
-      <p>
-        I want to deepen my knowledge of mechanical design and product
-        development, while exploring the role of robotics, automation
-        and emerging technologies in creating practical engineering
-        solutions. I believe continuous learning, experimentation and
-        collaboration are essential to becoming a capable engineer.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="container contact">
-    <div class="section-heading">
-      <h2>Let's Connect</h2>
-    </div>
-    <p>
-      I welcome opportunities to connect with engineering professionals,
-      researchers and academic communities interested in mechanical
-      engineering, product development and innovation.
-    </p>
-    <!-- Replace the email and LinkedIn URL below with your real details -->
-    <div class="buttons" style="justify-content:center">
-      <a class="btn" href="mailto:YOUR-EMAIL@example.com">Email Me</a>
-      <a class="btn outline" href="YOUR-LINKEDIN-URL" target="_blank">LinkedIn</a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="container">
-    <p>© 2026 Muhammad Jehanzeb | Mechanical Engineer</p>
-    <p>Built to document my engineering journey and projects.</p>
-  </div>
-</footer>
-
-</body>
-</html>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="robotme.jpg" alt="In-Pipe Robot Prototype" onclick="openLightbox(this.src)">
+            <div class="gallery-caption">Robot Prototype</div>
+          </div>
+          <div class="gallery-item">
+            <img src="awardrobot.jpg" alt="1st Position Award" onclick="openLightbox(this.src)">
+            <div class="gallery-caption">1st Position Award</div>
+          </div>
+          <div class="gallery-item">
+            <img src="robotcad.jpg" alt="3D CAD Assembly" onclick="openLightbox(this.src)">
+            <div class="gallery-caption">3D CAD Assembly</div>
+          </div>
+          <div class="gallery-item">
+            <img src="robotcadd.jpg" alt="CAD Isometric View" onclick="openLightbox(this.src)">
