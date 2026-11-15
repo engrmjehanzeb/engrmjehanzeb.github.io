@@ -1,10 +1,15 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Muhammad Jehanzeb - Mechanical Engineer interested in product development, mechanical design, robotics and engineering innovation.">
-<title>Muhammad Jehanzeb | Mechanical Engineer</title>
+
+<meta name="description" content="Muhammad Jehanzeb, Mechanical Engineering graduate from UET Peshawar. Academic and engineering portfolio showcasing mechanical design, product development, robotics, CAD and industrial experience.">
+
+<meta name="author" content="Muhammad Jehanzeb">
+
+<title>Muhammad Jehanzeb | Mechanical Engineering Portfolio</title>
 
 <style>
 :root {
@@ -14,187 +19,451 @@
   --text: #263449;
   --muted: #64748b;
   --white: #ffffff;
+  --border: #e5eaf1;
 }
-* { box-sizing: border-box; margin: 0; padding: 0; }
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 html { scroll-behavior: smooth; }
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   color: var(--text);
   line-height: 1.7;
   background: var(--white);
 }
-a { color: inherit; text-decoration: none; }
-.container { width: min(1080px, 90%); margin: auto; }
-nav {
-  position: sticky; top: 0; z-index: 10;
-  background: rgba(255,255,255,.96);
-  border-bottom: 1px solid #e8edf3;
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
+
+.container {
+  width: min(1100px, 90%);
+  margin: auto;
+}
+
+/* NAVIGATION */
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(255,255,255,.97);
+  border-bottom: 1px solid var(--border);
+}
+
 .nav-inner {
-  min-height: 68px; display: flex;
-  align-items: center; justify-content: space-between;
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   gap: 20px;
 }
-.logo { font-size: 19px; font-weight: 800; color: var(--navy); }
-.nav-links { display: flex; gap: 22px; flex-wrap: wrap; }
-.nav-links a { font-size: 13px; color: var(--muted); }
+
+.logo {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
 .nav-links a:hover { color: var(--blue); }
 
+/* HERO */
+
 .hero {
-  background: linear-gradient(120deg,#f3f7fc,#eaf1fa);
-  padding: 100px 0 90px;
+  background: linear-gradient(120deg,#f3f7fc,#e8f0fa);
+  padding: 105px 0 95px;
 }
-.hero-content { max-width: 760px; }
+
+.hero-content { max-width: 820px; }
+
 .eyebrow {
-  color: var(--blue); font-weight: 700;
-  font-size: 13px; letter-spacing: 2px;
+  color: var(--blue);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 2px;
   text-transform: uppercase;
 }
+
 h1 {
-  font-size: clamp(40px,7vw,66px);
-  line-height: 1.12; color: var(--navy);
+  font-size: clamp(40px,7vw,68px);
+  line-height: 1.12;
+  color: var(--navy);
   margin: 20px 0;
 }
+
 .hero h2 {
-  font-size: clamp(19px,3vw,25px);
-  font-weight: 500; color: #49617e;
+  font-size: clamp(19px,3vw,26px);
+  font-weight: 500;
+  color: #49617e;
   margin-bottom: 20px;
 }
-.hero p { max-width: 690px; color: #53647a; font-size: 16px; }
-.buttons { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 30px; }
+
+.hero p {
+  max-width: 730px;
+  color: #53647a;
+  font-size: 16px;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin-top: 30px;
+}
+
 .btn {
-  display: inline-block; padding: 12px 22px;
-  border-radius: 5px; font-weight: 700; font-size: 14px;
-  background: var(--navy); color: white;
+  display: inline-block;
+  padding: 12px 23px;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 14px;
+  background: var(--navy);
+  color: white;
+  transition: .2s;
 }
-.btn.outline { background: transparent; color: var(--navy); border: 1px solid #aab9ca; }
-section { padding: 76px 0; }
-section:nth-of-type(even) { background: var(--light); }
-.section-heading { margin-bottom: 34px; }
+
+.btn:hover {
+  background: var(--blue);
+}
+
+.btn.outline {
+  background: transparent;
+  color: var(--navy);
+  border: 1px solid #aab9ca;
+}
+
+/* GENERAL SECTIONS */
+
+section {
+  padding: 78px 0;
+  scroll-margin-top: 75px;
+}
+
+section:nth-of-type(even) {
+  background: var(--light);
+}
+
+.section-heading {
+  margin-bottom: 35px;
+}
+
 .section-heading h2 {
-  font-size: 30px; color: var(--navy); margin-bottom: 8px;
+  font-size: 31px;
+  color: var(--navy);
+  margin-bottom: 8px;
 }
-.section-heading p { color: var(--muted); max-width: 700px; }
-.about-grid, .project-grid, .experience-grid {
-  display: grid; grid-template-columns: repeat(2,1fr); gap: 22px;
+
+.section-heading p {
+  color: var(--muted);
+  max-width: 750px;
 }
+
+.about-grid,
+.project-grid,
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 22px;
+}
+
 .card {
-  background: white; padding: 25px;
-  border: 1px solid #e5eaf1; border-radius: 9px;
+  background: white;
+  padding: 25px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  min-width: 0;
 }
+
 .card.full-width {
   grid-column: 1 / -1;
 }
-.card h3 { color: var(--navy); margin-bottom: 9px; font-size: 19px; }
-.card p { color: var(--muted); font-size: 14px; }
 
-/* Image & Gallery Styling */
-.card-img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 6px;
-  margin-bottom: 16px;
-  border: 1px solid #e5eaf1;
-  cursor: pointer;
-  transition: transform 0.2s ease;
+.card h3 {
+  color: var(--navy);
+  margin-bottom: 9px;
+  font-size: 19px;
 }
-.card-img:hover { transform: scale(1.01); }
 
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-  margin-bottom: 18px;
-}
-.gallery-grid.three-col {
-  grid-template-columns: repeat(3, 1fr);
-}
-.gallery-item {
-  border-radius: 6px;
-  overflow: hidden;
-  border: 1px solid #e5eaf1;
-  background: #f8fafc;
-}
-.gallery-item img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  display: block;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-.gallery-item img:hover { transform: scale(1.04); }
-.gallery-caption {
-  font-size: 11px;
+.card p {
   color: var(--muted);
-  padding: 5px 6px;
-  text-align: center;
-  background: #f8fafc;
-  border-top: 1px solid #eef2f6;
+  font-size: 14px;
+}
+
+.project-number {
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.meta {
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 13px;
+}
+
+.details {
+  padding-left: 20px;
+  margin-top: 13px;
+}
+
+.details li {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 7px;
 }
 
 .tag {
-  display: inline-block; margin: 12px 5px 0 0;
-  padding: 5px 10px; border-radius: 4px;
-  background: #edf3fa; color: #315c88; font-size: 12px;
+  display: inline-block;
+  margin: 12px 5px 0 0;
+  padding: 5px 10px;
+  border-radius: 4px;
+  background: #edf3fa;
+  color: #315c88;
+  font-size: 12px;
 }
-.project-number {
-  color: var(--blue); font-size: 12px;
-  font-weight: bold; letter-spacing: 1px;
-  margin-bottom: 10px;
+
+/* IMAGE GALLERIES */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 14px;
+  margin: 20px 0;
 }
-.meta { color: var(--blue); font-size: 13px; font-weight: 700; margin-bottom: 10px; }
-ul.details { padding-left: 19px; margin-top: 12px; }
-ul.details li { color: var(--muted); font-size: 14px; margin-bottom: 6px; }
-.skills-grid {
-  display: grid; grid-template-columns: repeat(3,1fr); gap: 18px;
+
+.gallery-item {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: white;
+  min-width: 0;
 }
-.skill h3 { color: var(--navy); margin-bottom: 10px; font-size: 16px; }
-.skill p { color: var(--muted); font-size: 14px; }
+
+.gallery-item img {
+  width: 100%;
+  height: 195px;
+  display: block;
+  object-fit: contain;
+  background: #f1f4f8;
+  cursor: zoom-in;
+  transition: transform .25s ease;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.035);
+}
+
+.gallery-caption {
+  padding: 9px;
+  font-size: 12px;
+  text-align: center;
+  color: var(--muted);
+  background: white;
+  border-top: 1px solid var(--border);
+}
+
+/* EDUCATION */
+
 .education {
   border-left: 3px solid var(--blue);
-  padding: 5px 0 5px 23px; margin-bottom: 28px;
+  padding: 5px 0 5px 23px;
+  margin-bottom: 30px;
 }
-.education h3 { color: var(--navy); font-size: 19px; }
-.education p { color: var(--muted); font-size: 14px; }
+
+.education h3 {
+  color: var(--navy);
+  font-size: 19px;
+}
+
+.education p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* SKILLS */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 18px;
+}
+
+.skill h3 {
+  color: var(--navy);
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.skill p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* HIGHLIGHT */
+
 .highlight {
-  background: var(--navy); color: white;
-  border-radius: 10px; padding: 30px;
+  background: var(--navy);
+  color: white;
+  border-radius: 10px;
+  padding: 38px;
 }
-.highlight h3 { font-size: 22px; margin-bottom: 10px; }
-.highlight p { color: #d6e1ef; }
-.contact { text-align: center; }
-.contact p { color: var(--muted); margin: 12px auto 25px; max-width: 600px; }
+
+.highlight h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.highlight p {
+  color: #d6e1ef;
+  font-size: 15px;
+}
+
+/* CONTACT */
+
+.contact {
+  text-align: center;
+}
+
+.contact p {
+  color: var(--muted);
+  margin: 12px auto 22px;
+  max-width: 650px;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.contact-links a {
+  color: var(--blue);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.contact-links a:hover {
+  text-decoration: underline;
+}
+
+/* FOOTER */
+
 footer {
-  background: #10233b; color: #cbd5e1;
-  text-align: center; padding: 25px 0; font-size: 13px;
+  background: #10233b;
+  color: #cbd5e1;
+  text-align: center;
+  padding: 27px 0;
+  font-size: 13px;
 }
-footer a { color: white; }
 
-/* Click-to-zoom Lightbox */
+/* LIGHTBOX */
+
 .lightbox {
-  display: none; position: fixed; inset: 0; z-index: 100;
-  background: rgba(16, 35, 59, 0.92);
-  align-items: center; justify-content: center;
-  padding: 20px; cursor: zoom-out;
-}
-.lightbox.open { display: flex; }
-.lightbox img {
-  max-width: 92%; max-height: 88vh;
-  border-radius: 8px; box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(10,25,45,.95);
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  cursor: zoom-out;
 }
 
-@media(max-width:700px) {
-  .nav-inner { padding: 13px 0; align-items: flex-start; flex-direction: column; }
-  .nav-links { gap: 12px; }
-  .hero { padding: 70px 0; }
-  section { padding: 55px 0; }
-  .about-grid,.project-grid,.experience-grid,.skills-grid {
+.lightbox.open {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 94%;
+  max-height: 88vh;
+  object-fit: contain;
+  border-radius: 7px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  color: white;
+  font-size: 38px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media(max-width:750px) {
+  .nav-inner {
+    padding: 14px 0;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .nav-links {
+    gap: 13px;
+  }
+
+  .hero {
+    padding: 70px 0;
+  }
+
+  section {
+    padding: 55px 0;
+  }
+
+  .about-grid,
+  .project-grid,
+  .experience-grid,
+  .skills-grid {
     grid-template-columns: 1fr;
   }
-  .gallery-grid, .gallery-grid.three-col {
-    grid-template-columns: repeat(2, 1fr);
+
+  .card.full-width {
+    grid-column: auto;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+
+  .gallery-item img {
+    height: 155px;
+  }
+
+  .highlight {
+    padding: 25px;
+  }
+}
+
+@media(max-width:390px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
   }
 }
 </style>
@@ -202,9 +471,12 @@ footer a { color: white; }
 
 <body>
 
+<!-- NAVIGATION -->
+
 <nav>
   <div class="container nav-inner">
     <a href="#" class="logo">MJ.</a>
+
     <div class="nav-links">
       <a href="#about">About</a>
       <a href="#education">Education</a>
@@ -217,100 +489,655 @@ footer a { color: white; }
   </div>
 </nav>
 
+<!-- HOME -->
+
 <header class="hero">
   <div class="container hero-content">
-    <div class="eyebrow">Mechanical Engineer · Pakistan</div>
+
+    <div class="eyebrow">
+      Mechanical Engineer · Pakistan
+    </div>
+
     <h1>Muhammad Jehanzeb</h1>
-    <h2>Mechanical Engineering | Product Development | Robotics</h2>
+
+    <h2>
+      Mechanical Engineering | Product Development | Robotics
+    </h2>
+
     <p>
-      Mechanical Engineering graduate from UET Peshawar, interested in
-      mechanical design, product development and engineering innovation.
-      I enjoy exploring how engineering concepts can be translated into
-      practical solutions through design, experimentation and technology.
+      Mechanical Engineering graduate from the University of
+      Engineering and Technology, Peshawar, with an academic
+      background in mechanical design, manufacturing and
+      engineering systems. Through academic projects and
+      industrial training, I have developed an interest in
+      product development, robotics and practical engineering
+      innovation. I am keen to deepen my knowledge and
+      contribute to the development of useful engineering
+      solutions.
     </p>
+
     <div class="buttons">
       <a class="btn" href="#projects">Explore My Projects</a>
-      <a class="btn outline" href="#contact">Get In Touch</a>
+      <a class="btn outline" href="#contact">Contact Me</a>
     </div>
+
   </div>
 </header>
 
+<!-- ABOUT -->
+
 <section id="about">
   <div class="container">
+
     <div class="section-heading">
       <h2>About Me</h2>
-      <p>My academic background, practical exposure and interests in engineering.</p>
+      <p>My academic foundation, engineering experience and professional interests.</p>
     </div>
+
     <div class="about-grid">
+
       <div class="card">
-        <h3>My Background</h3>
+        <h3>Academic Background</h3>
         <p>
-          I graduated in Mechanical Engineering from the University of
-          Engineering and Technology, Peshawar, with a CGPA of 3.67/4.00.
-          I secured 7th position among 155 students, placing among the
-          top 5% of my class, with support from the PEF scholarship.
+          I completed my BSc in Mechanical Engineering at
+          UET Peshawar with a CGPA of 3.67/4.00, securing
+          7th position among 155 students and placing in
+          the top 4.52% of my class. I completed my
+          undergraduate studies with the support of
+          the PEF scholarship.
         </p>
       </div>
+
       <div class="card">
-        <h3>My Engineering Interests</h3>
+        <h3>Engineering Interests</h3>
         <p>
-          I am particularly interested in mechanical design, product
-          development, robotics, automation and the application of
-          emerging technologies to solve practical engineering problems.
-          I aim to continue developing my design and technical abilities.
+          My interests include mechanical design,
+          product development, robotics, automation
+          and manufacturing technologies. I am
+          particularly interested in understanding
+          how engineering concepts can be transformed
+          into practical products and solutions.
         </p>
       </div>
+
     </div>
   </div>
 </section>
+
+<!-- EDUCATION -->
 
 <section id="education">
   <div class="container">
+
     <div class="section-heading">
       <h2>Education</h2>
-      <p>Academic foundation in engineering and technical sciences.</p>
+      <p>My academic qualifications and educational background.</p>
     </div>
+
     <div class="education">
       <h3>BSc Mechanical Engineering</h3>
       <p>University of Engineering and Technology (UET), Peshawar, Pakistan</p>
-      <p>2021 – 2025 | CGPA: 3.67/4.00 | 7th out of 155 students</p>
-      <p>PEF Scholarship recipient</p>
+      <p>2021–2025</p>
+      <p>CGPA: 3.67/4.00 | 7th out of 155 students | Top 4.52%</p>
+      <p>PEF Scholarship Recipient</p>
     </div>
+
     <div class="education">
       <h3>FSc Pre-Engineering</h3>
       <p>Cadet College Razmak, Pakistan</p>
-      <p>924/1100 marks</p>
+      <p>Marks: 924/1100</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+  <div class="container">
+
+    <div class="section-heading">
+      <h2>Engineering Projects</h2>
+      <p>
+        Selected academic projects and engineering work
+        demonstrating my exposure to mechanical design,
+        inspection technology and practical problem-solving.
+      </p>
+    </div>
+
+    <div class="project-grid">
+
+      <!-- PROJECT 01 -->
+
+      <div class="card full-width">
+
+        <div class="project-number">
+          PROJECT 01 · FINAL YEAR PROJECT
+        </div>
+
+        <h3>
+          Semi-Autonomous In-Pipe Inspection and Monitoring Robot
+        </h3>
+
+        <div class="meta">
+          SNGPL-Sponsored Project | 2024–2025
+        </div>
+
+        <p>
+          This final-year project focused on developing a
+          semi-autonomous robotic platform for the inspection
+          and monitoring of gas pipelines. The design explored
+          a mobile mechanical system capable of navigating
+          inside pipelines and supporting condition-monitoring
+          activities.
+        </p>
+
+        <div class="gallery-grid">
+
+          <div class="gallery-item">
+            <img src="robotme.jpg" alt="In-pipe inspection robot prototype" loading="lazy" onclick="openLightbox(this.src)">
+            <div class="gallery-caption">Robot Prototype</div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="awardrobot.jpg" alt="SNGPL sponsored project award recognition" loading="lazy" onclick="openLightbox(this.src)">
+            <div class="gallery-caption">Project Recognition</div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="robotcad.jpg" alt="Inspection robot CAD model" loading="lazy" onclick="openLightbox(this.src)">
+            <div class="gallery-caption">CAD Assembly</div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="robotcadd.jpg" alt="Inspection robot CAD design view" loading="lazy" onclick="openLightbox(this.src)">
+            <div class="gallery-caption">Mechanical Design</div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="robot2d.jpg" alt="Inspection robot 2D engineering drawing" loading="lazy" onclick="openLightbox(this.src)">
+            <div class="gallery-caption">2D Engineering Drawing</div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="pantograph.jpg" alt="Pantographic mechanical leg mechanism" loading="lazy" onclick="openLightbox(this.src)">
+            <div class="gallery-caption">Pantographic Mechanism</div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="robotinside.jpg" alt="Robot inside pipeline" loading="lazy" onclick="openLightbox(this.src)">
+            <div class="gallery-caption">In-Pipe Configuration</div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="camera.jpg" alt="Robot camera and monitoring component" loading="lazy" onclick="openLightbox(this.src)">
+            <div class="gallery-caption">Camera and Monitoring</div>
+          </div>
+
+        </div>
+
+        <h3>My Engineering Contribution</h3>
+
+        <ul class="details">
+          <li>Contributed to the mechanical concept and chassis development.</li>
+          <li>Worked on spring-loaded telescopic and pantographic leg mechanisms.</li>
+          <li>Developed the mechanical concept for pipeline diameters of approximately 14–16 inches.</li>
+          <li>Worked with CAD modelling and design development using Fusion 360.</li>
+          <li>Explored ultrasonic wall-thickness inspection and monitoring concepts.</li>
+          <li>Worked with system concepts involving FPV, LoRa and GPS.</li>
+          <li>Participated in prototype development and project testing.</li>
+        </ul>
+
+        <p style="margin-top:18px;">
+          <strong>Project Achievement:</strong>
+          1st position among 37 projects.
+        </p>
+
+        <span class="tag">Fusion 360</span>
+        <span class="tag">Mechanical Design</span>
+        <span class="tag">Robotics</span>
+        <span class="tag">Pipeline Inspection</span>
+        <span class="tag">Product Development</span>
+
+      </div>
+
+      <!-- PROJECT 02 -->
+
+      <div class="card full-width">
+
+        <div class="project-number">
+          PROJECT 02 · INDUSTRIAL CASE STUDY
+        </div>
+
+        <h3>
+          Centrifugal Pump Performance and Low-Flow Investigation
+        </h3>
+
+        <div class="meta">
+          Engro Fertilizers, Daharki | 2025
+        </div>
+
+        <p>
+          During my industrial internship at Engro Fertilizers,
+          I worked on a case study involving low flow in a
+          safety-shower and potable-water pump. The investigation
+          focused on understanding the equipment condition
+          and possible mechanical causes of reduced performance.
+        </p>
+
+        <div class="gallery-grid">
+
+          <div class="gallery-item">
+            <img src="cpcasing.jpg" alt="Centrifugal pump casing" loading="lazy" onclick="openLightbox(this.src)">
+            <div class="gallery-caption">Pump Casing</div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="cpimpeller.jpg" alt="Centrifugal pump impeller" loading="lazy" onclick="openLightbox(this.src)">
+            <div class="gallery-caption">Pump Impeller</div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="cpfinding.jpg" alt="Pump investigation findings" loading="lazy" onclick="openLightbox(this.src)">
+            <div class="gallery-caption">Investigation Findings</div>
+          </div>
+
+        </div>
+
+        <h3>Investigation and Learning</h3>
+
+        <ul class="details">
+          <li>Studied a KSB API OH1 centrifugal pump.</li>
+          <li>Reviewed pump operating parameters and specifications.</li>
+          <li>Examined damaged impeller and worn casing conditions.</li>
+          <li>Considered the effects of equipment deterioration and stagnation on pump performance.</li>
+          <li>Developed an understanding of practical pump troubleshooting and mechanical maintenance.</li>
+        </ul>
+
+        <span class="tag">Centrifugal Pumps</span>
+        <span class="tag">Troubleshooting</span>
+        <span class="tag">Mechanical Maintenance</span>
+        <span class="tag">RCA</span>
+
+      </div>
+
+      <!-- PROJECT 03 -->
+
+      <div class="card full-width">
+
+        <div class="project-number">
+          PROJECT 03 · DESIGN AND DEVELOPMENT
+        </div>
+
+        <h3>
+          CAD Modelling and Additive Manufacturing
+        </h3>
+
+        <div class="meta">
+          Mechanical Design and R&D Work
+        </div>
+
+        <p>
+          Additional design work reflecting my interest in
+          three-dimensional modelling, lightweight structures
+          and the relationship between digital design and
+          physical product development.
+        </p>
+
+        <div class="gallery-grid">
+
+          <div class="gallery-item">
+            <img src="rdcertificate.jpg" alt="R&D and design certificate" loading="lazy" onclick="openLightbox(this.src)">
+            <div class="gallery-caption">Design and R&D Recognition</div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="rdmodel.jpg" alt="Mechanical research and development model" loading="lazy" onclick="openLightbox(this.src)">
+            <div class="gallery-caption">Physical Design Model</div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="dron.jpg" alt="Drone CAD design" loading="lazy" onclick="openLightbox(this.src)">
+            <div class="gallery-caption">Drone Design</div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="dronmodel.jpg" alt="Drone model and 3D printed design" loading="lazy" onclick="openLightbox(this.src)">
+            <div class="gallery-caption">Drone Model</div>
+          </div>
+
+        </div>
+
+        <ul class="details">
+          <li>Explored CAD-based mechanical design and three-dimensional modelling.</li>
+          <li>Developed an interest in lightweight product structures and design refinement.</li>
+          <li>Gained exposure to additive manufacturing and physical model development.</li>
+        </ul>
+
+        <span class="tag">CAD Modelling</span>
+        <span class="tag">Product Design</span>
+        <span class="tag">Additive Manufacturing</span>
+        <span class="tag">3D Printing</span>
+
+      </div>
+
     </div>
   </div>
 </section>
 
-<section id="projects">
+<!-- INDUSTRIAL EXPERIENCE -->
+
+<section id="experience">
   <div class="container">
+
     <div class="section-heading">
-      <h2>Engineering Projects</h2>
-      <p>Selected academic and practical engineering work. Click any picture to enlarge.</p>
+      <h2>Industrial Experience</h2>
+      <p>
+        Practical engineering exposure through internships
+        and graduate engineer training.
+      </p>
     </div>
 
-    <div class="project-grid">
-      <!-- PROJECT 01 -->
-      <div class="card full-width">
-        <div class="project-number">PROJECT 01 · FINAL YEAR PROJECT</div>
-        <h3>Semi-Autonomous In-Pipe Inspection and Monitoring Robot</h3>
-        <div class="meta">SNGPL-Sponsored Project | 2024–2025</div>
+    <div class="experience-grid">
 
-        <div class="gallery-grid">
-          <div class="gallery-item">
-            <img src="robotme.jpg" alt="In-Pipe Robot Prototype" onclick="openLightbox(this.src)">
-            <div class="gallery-caption">Robot Prototype</div>
-          </div>
-          <div class="gallery-item">
-            <img src="awardrobot.jpg" alt="1st Position Award" onclick="openLightbox(this.src)">
-            <div class="gallery-caption">1st Position Award</div>
-          </div>
-          <div class="gallery-item">
-            <img src="robotcad.jpg" alt="3D CAD Assembly" onclick="openLightbox(this.src)">
-            <div class="gallery-caption">3D CAD Assembly</div>
-          </div>
-          <div class="gallery-item">
-            <img src="robotcadd.jpg" alt="CAD Isometric View" onclick="openLightbox(this.src)">
-            <div class="gallery-caption">CAD Detailed View</div>
+      <div class="card">
+        <h3>PEC Graduate Engineer Trainee</h3>
+        <div class="meta">
+          Planning & Development Department, Government of KP | 2026–Present
+        </div>
+
+        <img
+          src="getpec.jpg"
+          alt="PEC Graduate Engineer Training"
+          loading="lazy"
+          onclick="openLightbox(this.src)"
+          style="width:100%;height:190px;object-fit:contain;background:#f1f4f8;border-radius:6px;margin:12px 0;cursor:zoom-in;"
+        >
+
+        <p>
+          Graduate engineering training through engineering
+          organizations and public-sector infrastructure
+          facilities.
+        </p>
+
+        <ul class="details">
+          <li>Ultimate Engineering Consultant, Peshawar.</li>
+          <li>Water and Sanitation Services Peshawar (WSSP).</li>
+          <li>Malakand-III Hydropower Station.</li>
+          <li>Exposure to workshop maintenance, welding, repair and hydropower equipment.</li>
+          <li>Learning about Francis turbines and associated mechanical systems.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Mechanical Maintenance Intern</h3>
+        <div class="meta">
+          Mari Energies, Daharki | July–August 2024
+        </div>
+
+        <img
+          src="mari.jpg"
+          alt="Mari Energies compressor station internship"
+          loading="lazy"
+          onclick="openLightbox(this.src)"
+          style="width:100%;height:190px;object-fit:contain;background:#f1f4f8;border-radius:6px;margin:12px 0;cursor:zoom-in;"
+        >
+
+        <p>
+          Industrial training at the compressor station
+          with exposure to reciprocating gas compression
+          equipment and mechanical maintenance practices.
+        </p>
+
+        <ul class="details">
+          <li>Studied an Ariel KBZ-4 four-stage reciprocating compressor package.</li>
+          <li>Observed compressor components and operating principles.</li>
+          <li>Gained exposure to maintenance practices and industrial safety procedures.</li>
+          <li>Learned about PTW, LOTO and gas safety.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Mechanical Maintenance Intern</h3>
+        <div class="meta">
+          Engro Fertilizers, Daharki | July–August 2025
+        </div>
+
+        <img
+          src="engro.jpg"
+          alt="Engro Fertilizers industrial internship"
+          loading="lazy"
+          onclick="openLightbox(this.src)"
+          style="width:100%;height:190px;object-fit:contain;background:#f1f4f8;border-radius:6px;margin:12px 0;cursor:zoom-in;"
+        >
+
+        <p>
+          Industrial training in the Urea-II plant with
+          exposure to mechanical maintenance activities,
+          rotating equipment and equipment troubleshooting.
+        </p>
+
+        <ul class="details">
+          <li>Observed industrial mechanical maintenance practices.</li>
+          <li>Gained exposure to pumps and plant equipment.</li>
+          <li>Worked on a pump low-flow investigation case study.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TECHNICAL SKILLS -->
+
+<section id="skills">
+  <div class="container">
+
+    <div class="section-heading">
+      <h2>Technical Skills</h2>
+      <p>
+        Engineering tools and technical areas developed
+        through academic work and industrial exposure.
+      </p>
+    </div>
+
+    <div class="skills-grid">
+
+      <div class="card skill">
+        <h3>CAD and Mechanical Design</h3>
+        <p>
+          Autodesk Fusion 360, AutoCAD, CAD modelling,
+          mechanical assemblies and engineering drawings.
+        </p>
+      </div>
+
+      <div class="card skill">
+        <h3>Product Development</h3>
+        <p>
+          Design development, mechanical concepts,
+          prototype development and product innovation fundamentals.
+        </p>
+      </div>
+
+      <div class="card skill">
+        <h3>Mechanical Engineering</h3>
+        <p>
+          Machine design, materials, manufacturing,
+          mechanical systems and engineering fundamentals.
+        </p>
+      </div>
+
+      <div class="card skill">
+        <h3>Rotating Equipment</h3>
+        <p>
+          Centrifugal pumps, reciprocating compressors,
+          bearings and industrial maintenance exposure.
+        </p>
+      </div>
+
+      <div class="card skill">
+        <h3>Inspection and Quality</h3>
+        <p>
+          NDT fundamentals, ultrasonic testing,
+          inspection practices and quality management systems.
+        </p>
+      </div>
+
+      <div class="card skill">
+        <h3>Robotics and Automation</h3>
+        <p>
+          Robotic mechanisms, pipeline inspection systems,
+          automation concepts and monitoring technologies.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+
+<section id="certifications">
+  <div class="container">
+
+    <div class="section-heading">
+      <h2>Certifications and Professional Development</h2>
+      <p>
+        Additional technical qualifications and
+        professional training.
+      </p>
+    </div>
+
+    <div class="card">
+      <ul class="details">
+        <li>ISO 9001:2015 Lead Auditor – CQI/IRCA.</li>
+        <li>ASNT NDT Level II – methods as specified on the awarded certificate.</li>
+        <li>Certified SolidWorks Associate (CSWA).</li>
+        <li>Autodesk CAD/CAM/CAE certification.</li>
+        <li>AutoCAD certification.</li>
+        <li>IOSH certification.</li>
+        <li>OSHA 30-Hour training.</li>
+        <li>Risk Assessment and Fire Safety training.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROFESSIONAL DIRECTION -->
+
+<section>
+  <div class="container">
+
+    <div class="highlight">
+      <h3>My Direction in Engineering</h3>
+
+      <p>
+        I aim to advance my knowledge in mechanical design
+        and product development, with a particular interest
+        in robotics, automation and emerging technologies.
+        I want to build the ability to translate engineering
+        concepts into useful products through design,
+        experimentation and interdisciplinary learning.
+        My long-term goal is to contribute to the development
+        of practical and innovative engineering solutions.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+  <div class="container contact">
+
+    <div class="section-heading">
+      <h2>Let's Connect</h2>
+    </div>
+
+    <p>
+      I welcome opportunities to connect with engineering
+      professionals, researchers, academic communities
+      and people interested in mechanical engineering,
+      product development and innovation.
+    </p>
+
+    <div class="contact-links">
+      <a href="mailto:muhammadjehanzeb.me@gmail.com">
+        Primary Email
+      </a>
+
+      <a href="mailto:engr.jaanz@gmail.com">
+        Alternative Email
+      </a>
+
+      <a href="https://linkedin.com" target="_blank" rel="noopener">
+        LinkedIn
+      </a>
+
+      <a href="https://coursera.org" target="_blank" rel="noopener">
+        Coursera
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="container">
+    <p>© 2026 Muhammad Jehanzeb</p>
+    <p>Mechanical Engineering | Design | Product Innovation</p>
+  </div>
+</footer>
+
+<!-- IMAGE LIGHTBOX -->
+
+<div
+  class="lightbox"
+  id="lightbox"
+  onclick="closeLightbox()"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Enlarged portfolio photograph"
+>
+  <button
+    class="lightbox-close"
+    aria-label="Close image"
+    onclick="closeLightbox()"
+  >×</button>
+
+  <img id="lightbox-image" src="" alt="Enlarged project photograph">
+</div>
+
+<!-- JAVASCRIPT -->
+
+<script>
+function openLightbox(imageSource) {
+  const box = document.getElementById("lightbox");
+  const image = document.getElementById("lightbox-image");
+
+  image.src = imageSource;
+  box.classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+
+function closeLightbox() {
+  const box = document.getElementById("lightbox");
+
+  box.classList.remove("open");
+  document.body.style.overflow = "";
+  document.getElementById("lightbox-image").src = "";
+}
+
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape") {
+    closeLightbox();
+  }
+});
+</script>
+
+</body>
+</html>
